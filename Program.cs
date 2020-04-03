@@ -16,7 +16,7 @@ namespace MyprojecsApp
             double side2 = double.Parse(Console.ReadLine());
             Rectangle rect1 = new Rectangle(side1, side2);
             System.Console.WriteLine($"Area = {rect1.Area}\nPerimeter = {rect1.Perimeter}");
-            Console.ReadKey();*/
+            Console.ReadKey();
 
                                               //Задача 2
             Book book;
@@ -29,6 +29,24 @@ namespace MyprojecsApp
             book = new Book( Author, Title,content);
             book.Show();
             Console.ReadKey();
+
+                                            //Задача 3
+            Animal GetInfo = new Animal();
+            Animal Kot = new Animal("Лила","nicely",2.5,"Сабринна");
+            Animal Sobaka = new Animal("Барсик","good",15,"Иван");
+            Animal Tigr = new Animal("Канадскый тигр",63.4);
+
+
+            Console.WriteLine("Просмотрим информацию о некоторие животнии:\n");
+            GetInfo.Show();
+            Console.WriteLine("\t\t Кошка\n");
+            Kot.Show();
+            Console.WriteLine("\t\t Собака\n");
+            Sobaka.Show();
+            Console.WriteLine("\t\t Тигр\n");
+            Tigr.Show();
+
+            Console.ReadKey();*/
         }
         class Rectangle
         {
@@ -122,5 +140,34 @@ namespace MyprojecsApp
             }
         }
 
+        class Animal
+    {
+        private string Name;
+        private string Kind;
+        private string Master;
+        private double Weight;
+        public Animal(string Name, string Kind, double Weight, string Master) 
+        {
+            this.Name = Name;
+            this.Kind = Kind;
+            this.Weight = Weight;
+            this.Master = Master;
+        }
+        public Animal(string Name, double Weight)
+        {
+            this.Name = Name;
+            this.Weight = Weight;
+        }
+        public Animal()
+        {
+            this.Name =" Name ";
+            this.Kind = "Kind ";
+            this.Master = "Master Weight";
+        }
+        public void Show()
+        {System.Console.WriteLine("-------------------------------------------");
+            Console.WriteLine( $"{Name}   {Kind}   {Master}   {Weight}\n");
+        }
+    }
     }
 }
